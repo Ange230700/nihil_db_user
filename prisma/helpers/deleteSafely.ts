@@ -1,4 +1,4 @@
-// prisma\helpers\deleteSafely.ts
+// user\prisma\helpers\deleteSafely.ts
 
 import { Prisma } from "@prisma/client";
 
@@ -7,7 +7,7 @@ function sleep(ms: number) {
 }
 
 async function deleteSafely(fn: () => Promise<unknown>, name: string) {
-  const MAX_TRIES = 10;
+  const MAX_TRIES = 6;
   const BASE_DELAY_MS = 100;
   let tries = 0;
   while (true) {
@@ -22,7 +22,9 @@ async function deleteSafely(fn: () => Promise<unknown>, name: string) {
       ) {
         tries++;
         const delay = BASE_DELAY_MS * Math.pow(2, tries);
-        console.log(`⚠️ Retrying to delete ${name} in ${delay}ms...`);
+        console.log(
+          `⚠️ Retrying to delete ${name} in ${delay}ms...(try ${tries}/${MAX_TRIES})`,
+        );
         await sleep(delay);
         continue;
       }

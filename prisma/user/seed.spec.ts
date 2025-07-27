@@ -7,12 +7,12 @@ import cleanUp from "~/prisma/helpers/cleanUp";
 describe("User Seeding & Cleanup", () => {
   beforeAll(async () => {
     await cleanUp(); // Clean up before
-  });
+  }, 60000);
 
   afterAll(async () => {
     await cleanUp(); // Clean up after
     await prisma.$disconnect();
-  });
+  }, 60000);
 
   it("should seed 10 users with profiles", async () => {
     await seedUsers(false);

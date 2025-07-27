@@ -1,4 +1,4 @@
-// prisma\helpers\cleanUp.ts
+// user\prisma\helpers\cleanUp.ts
 
 import prisma from "~/prisma/lib/client";
 import deleteSafely from "~/prisma/helpers/deleteSafely";

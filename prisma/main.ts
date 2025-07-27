@@ -1,4 +1,4 @@
-// prisma/main.ts
+// user\prisma\main.ts
 
 import prisma from "~/prisma/lib/client";
 import seedUsers from "~/prisma/user/seed";

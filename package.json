@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "dotenv -e .env.test -- jest --detectOpenHandles",
+    "test:unit": "prisma db push && jest",
+    "test": "npm run test:unit",
+    "lint": "eslint --cache .",
     "clean": "rm -rf node_modules package-lock.json dist",
     "postinstall": "npm run prisma:format && npm run prisma:generate",
     "postbuild": "npm run prisma:migrate:deploy && npm run db:cleanup && npm run prisma:db:seed",
@@ -39,6 +41,7 @@
     "typescript": "^5.8.3"
   },
   "jest": {
+    "globalSetup": "./prisma/testSetup.ts",
     "moduleFileExtensions": [
       "js",
       "json",
