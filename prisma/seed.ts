@@ -1,19 +1,25 @@
-// user\prisma\user\seed.ts
+// user\prisma\seed.ts
 
 import argon2 from "argon2";
-import prisma from "~/prisma/lib/client";
+import prisma from "@nihil/user/prisma/lib/client";
 import { faker } from "@faker-js/faker";
-import deleteSafely from "~/prisma/helpers/deleteSafely";
+import { deleteSafely } from "@nihil/shared";
+import { PrismaClient } from "@prisma/client";
+
+type UserSeedClient = Pick<PrismaClient, "user" | "userprofile">;
 
 export const NUM_USERS = 10;
 
-async function seedUsers(skipCleanup = false) {
+async function seedUsers(
+  prismaClient: UserSeedClient = prisma,
+  skipCleanup = false,
+) {
   if (!skipCleanup) {
     await deleteSafely(
-      () => prisma.userprofile.deleteMany({}),
+      () => prismaClient.userprofile.deleteMany({}),
       "user profiles",
     );
-    await deleteSafely(() => prisma.user.deleteMany({}), "users");
+    await deleteSafely(() => prismaClient.user.deleteMany({}), "users");
   } else {
     console.log("⚠️ Skipping cleanup (SKIP_CLEANUP=true)");
   }
@@ -49,7 +55,7 @@ async function seedUsers(skipCleanup = false) {
   );
 
   await Promise.all(
-    fakeUsers.map((user) => prisma.user.create({ data: user })),
+    fakeUsers.map((user) => prismaClient.user.create({ data: user })),
   );
 
   console.log(`🌟 Created ${NUM_USERS} users.`);

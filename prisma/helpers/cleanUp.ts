@@ -1,7 +1,7 @@
 // user\prisma\helpers\cleanUp.ts
 
-import prisma from "~/prisma/lib/client";
-import deleteSafely from "~/prisma/helpers/deleteSafely";
+import prisma from "@nihil/user/prisma/lib/client";
+import { deleteSafely } from "@nihil/shared";
 
 async function cleanUp() {
   console.log("🧹 Cleaning up…");

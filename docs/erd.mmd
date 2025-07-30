@@ -1,7 +1,7 @@
 %% user\docs\erd.mmd
 
 erDiagram
-    USERS {
+    user {
         UUID id PK
         STRING username
         STRING email
@@ -11,7 +11,7 @@ erDiagram
         DATETIME created_at
         DATETIME updated_at
     }
-    USER_PROFILE {
+    userprofile {
         UUID id PK
         UUID user_id FK
         STRING bio
@@ -20,4 +20,4 @@ erDiagram
         STRING website
         DATETIME updated_at
     }
-    USERS ||--o| USER_PROFILE : "has"
+    user ||--o| userprofile : "has"

@@ -1,0 +1,49 @@
+{
+  "name": "@nihil_databases/user",
+  "root": "user",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "tsc -b",
+        "cwd": "user"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run test",
+        "cwd": "user"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "rm -rf prisma/generated node_modules package-lock.json",
+        "cwd": "user"
+      }
+    },
+    "prisma:db:seed": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run prisma:db:seed",
+        "cwd": "user"
+      }
+    },
+    "prisma:db:push": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run prisma:db:push",
+        "cwd": "user"
+      }
+    },
+    "prisma:migrate:reset": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run prisma:migrate:reset",
+        "cwd": "user"
+      }
+    }
+  }
+}

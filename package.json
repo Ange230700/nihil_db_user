@@ -1,17 +1,16 @@
 {
-  "name": "nihil_databases",
+  "name": "@nihil_databases/user",
   "version": "1.0.0",
-  "description": "",
+  "description": "User Service Database",
   "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
   "scripts": {
-    "test:unit": "prisma db push && jest",
-    "test": "npm run test:unit",
-    "lint": "eslint --cache .",
-    "clean": "rm -rf node_modules package-lock.json dist",
+    "test": "jest",
+    "lint": "eslint .",
+    "clean": "rm -rf dist prisma/generated node_modules",
     "postinstall": "npm run prisma:format && npm run prisma:generate",
-    "postbuild": "npm run prisma:migrate:deploy && npm run db:cleanup && npm run prisma:db:seed",
-    "prebuild": "npm run clean && npm i",
-    "build": "tsc",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
@@ -66,7 +65,10 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "moduleNameMapper": {
-      "~/(.*)": "<rootDir>/$1"
+      "^@nihil/shared$": "<rootDir>/../shared/src/index.ts",
+      "^@nihil/shared/(.*)$": "<rootDir>/../shared/src/$1",
+      "^@nihil/user/(.*)$": "<rootDir>/../user/$1",
+      "^@nihil/post/(.*)$": "<rootDir>/../post/$1"
     }
   },
   "prisma": {

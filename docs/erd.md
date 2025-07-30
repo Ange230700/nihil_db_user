@@ -2,7 +2,7 @@
 
 # User Service: Entities & Relationship
 
-* **USERS**
+* **user**
 
   * Stores basic user info (username, email, password, etc.)
 

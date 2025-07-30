@@ -1,32 +1,10 @@
 {
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
-    "allowJs": true,
-    "module": "ES2022",
-    "declaration": true,
-    "removeComments": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "ES2023",
-    "sourceMap": true,
     "outDir": "dist",
-    "baseUrl": "./",
-    "paths": {
-      "~/*": ["./*"]
-    },
-    "incremental": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": true,
-    "strictBindCallApply": true,
-    "noFallthroughCasesInSwitch": true,
-    "lib": ["ES2023"],
-    "rootDir": "./",
-    "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "resolveJsonModule": true
+    "rootDir": "prisma"
   },
-  "include": ["prisma/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["prisma"],
+  "exclude": ["node_modules", "dist", "prisma/generated"],
+  "references": [{ "path": "../shared" }]
 }

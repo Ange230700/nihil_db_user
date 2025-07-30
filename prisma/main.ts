@@ -1,16 +1,13 @@
 // user\prisma\main.ts
 
-import prisma from "~/prisma/lib/client";
-import seedUsers from "~/prisma/user/seed";
+import { runSeed } from "@nihil/shared";
+import prisma from "@nihil/user/prisma/lib/client";
+import seedUsers from "@nihil/user/prisma/seed";
+
+const seedWithClient = (skipCleanup: boolean) => seedUsers(prisma, skipCleanup);
 
 async function main() {
-  console.log("🌱 Seeding...");
-
-  const skipCleanup = process.env.SKIP_CLEANUP === "true";
-
-  await seedUsers(skipCleanup);
-
-  console.log("🌱 Seeding complete.");
+  runSeed(seedWithClient, "User seeding");
 }
 
 main()
