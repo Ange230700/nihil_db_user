@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
-    "clean": "rm -rf dist prisma/generated node_modules",
+    "clean": "rm -rf dist prisma/generated node_modules tsconfig.tsbuildinfo",
     "postinstall": "npm run prisma:format && npm run prisma:generate",
     "prisma:generate": "prisma generate",
     "prisma:migrate:dev": "prisma migrate dev",
