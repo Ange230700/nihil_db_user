@@ -5,3 +5,4 @@ import { PrismaClient } from "@nihil/user/prisma/generated/client";
 const prisma = new PrismaClient();
 
 export default prisma;
+export * from "@nihil/user/prisma/generated/client";

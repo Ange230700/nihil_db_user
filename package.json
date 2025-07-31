@@ -2,7 +2,8 @@
   "name": "@nihil_databases/user",
   "version": "1.0.0",
   "description": "User Service Database",
-  "main": "index.js",
+  "main": "prisma/lib/client.js",
+  "types": "prisma/lib/client.d.ts",
   "directories": {
     "doc": "docs"
   },
