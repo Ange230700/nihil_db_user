@@ -1,8 +1,8 @@
 // user\prisma\main.ts
 
-import { runSeed } from "@nihil/shared";
-import prisma from "@nihil/user/prisma/lib/client";
-import seedUsers from "@nihil/user/prisma/seed";
+import { runSeed } from "nihildbshared";
+import prisma from "nihildbuser/prisma/lib/client";
+import seedUsers from "nihildbuser/prisma/seed";
 
 const seedWithClient = (skipCleanup: boolean) => seedUsers(prisma, skipCleanup);
 

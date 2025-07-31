@@ -1,9 +1,9 @@
 // user\prisma\seed.ts
 
 import argon2 from "argon2";
-import prisma from "@nihil/user/prisma/lib/client";
+import prisma from "nihildbuser/prisma/lib/client";
 import { faker } from "@faker-js/faker";
-import { deleteSafely } from "@nihil/shared";
+import { deleteSafely } from "nihildbshared";
 import { PrismaClient } from "@prisma/client";
 
 type UserSeedClient = Pick<PrismaClient, "user" | "userprofile">;

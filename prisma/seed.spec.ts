@@ -1,7 +1,7 @@
 // user\prisma\seed.spec.ts
 
-import prisma from "@nihil/user/prisma/lib/client";
-import seedUsers, { NUM_USERS } from "@nihil/user/prisma/seed";
+import prisma from "nihildbuser/prisma/lib/client";
+import seedUsers, { NUM_USERS } from "nihildbuser/prisma/seed";
 
 describe("User Seeding (isolated)", () => {
   it("should seed users with profiles inside a transaction and rollback", async () => {
