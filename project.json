@@ -45,6 +45,13 @@
         "command": "npm run prisma:migrate:reset",
         "cwd": "user"
       }
+    },
+    "prisma:migrate:reset:force": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm run prisma:migrate:reset:force",
+        "cwd": "user"
+      }
     }
   }
 }

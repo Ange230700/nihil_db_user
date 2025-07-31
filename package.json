@@ -7,6 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
+    "pretest": "npm run prisma:migrate:reset:force",
     "test": "jest",
     "lint": "eslint .",
     "clean": "rm -rf dist prisma/generated node_modules tsconfig.tsbuildinfo",
@@ -15,6 +16,7 @@
     "prisma:migrate:dev": "prisma migrate dev",
     "prisma:migrate:deploy": "prisma migrate deploy",
     "prisma:migrate:reset": "prisma migrate reset",
+    "prisma:migrate:reset:force": "prisma migrate reset --force",
     "prisma:migrate:status": "prisma migrate status",
     "prisma:db:seed": "prisma db seed",
     "prisma:db:push": "prisma db push",
