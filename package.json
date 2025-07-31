@@ -4,6 +4,13 @@
   "description": "User Service Database",
   "main": "prisma/lib/client.js",
   "types": "prisma/lib/client.d.ts",
+  "files": [
+    "prisma/generated",
+    "prisma/lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "directories": {
     "doc": "docs"
   },
