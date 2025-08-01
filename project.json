@@ -53,12 +53,12 @@
         "cwd": "user"
       }
     },
-    "publish": {
+    "publish:package": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npm publish --access public",
+        "command": "npm run publish:package",
         "cwd": "user",
-        "env": { "NODE_ENV": "production" }
+        "env": { "NODE_ENV": "prod" }
       },
       "dependsOn": ["build"]
     }
