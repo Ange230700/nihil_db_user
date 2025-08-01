@@ -52,6 +52,15 @@
         "command": "npm run prisma:migrate:reset:force",
         "cwd": "user"
       }
+    },
+    "publish": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npm publish --access public",
+        "cwd": "user",
+        "env": { "NODE_ENV": "production" }
+      },
+      "dependsOn": ["build"]
     }
   }
 }
