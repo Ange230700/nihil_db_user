@@ -9,6 +9,11 @@
       "options": {
         "command": "npm run build",
         "cwd": "user"
+      },
+      "configurations": {
+        "ci": {
+          "command": "npm run build -- --no-cache"
+        }
       }
     },
     "test": {
