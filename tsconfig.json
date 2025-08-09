@@ -1,10 +1,21 @@
 {
-  "extends": "../tsconfig.base.json",
   "compilerOptions": {
+    "target": "ES2023",
+    "module": "ES2022",
+    "moduleResolution": "node",
     "outDir": "dist",
-    "rootDir": "prisma"
+    "rootDir": "prisma",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "nihildbuser/*": ["prisma/*"]
+    }
   },
   "include": ["prisma"],
-  "exclude": ["node_modules", "dist", "prisma/generated"],
-  "references": [{ "path": "../shared" }]
+  "exclude": ["node_modules", "dist", "prisma/generated"]
 }
