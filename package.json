@@ -78,8 +78,7 @@
     "moduleNameMapper": {
       "^nihildbshared$": "<rootDir>/../shared/src/index.ts",
       "^nihildbshared/(.*)$": "<rootDir>/../shared/src/$1",
-      "^nihildbuser/(.*)$": "<rootDir>/../user/$1",
-      "^nihildbpost/(.*)$": "<rootDir>/../post/$1"
+      "^nihildbuser/(.*)$": "<rootDir>/../user/$1"
     }
   },
   "prisma": {
