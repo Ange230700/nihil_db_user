@@ -1,9 +1,9 @@
 {
   "name": "nihildbuser",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "User Service Database",
-  "main": "prisma/lib/client.js",
-  "types": "prisma/lib/client.d.ts",
+  "main": "dist/lib/client.js",
+  "types": "dist/lib/client.d.ts",
   "files": [
     "prisma/generated",
     "dist"
