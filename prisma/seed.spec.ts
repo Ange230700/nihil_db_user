@@ -1,16 +1,16 @@
 // user\prisma\seed.spec.ts
 
 import prisma from "nihildbuser/prisma/lib/client";
-import seedUsers, { NUM_USERS } from "nihildbuser/prisma/seed";
+import seedUsers, { COUNT } from "nihildbuser/prisma/seed";
 
 describe("User Seeding (isolated)", () => {
   it("should seed users with profiles inside a transaction and rollback", async () => {
     try {
       await prisma.$transaction(
         async (tx) => {
-          await seedUsers(tx, false);
+          await seedUsers(false);
           const users = await tx.user.findMany({ include: { profile: true } });
-          expect(users.length).toBe(NUM_USERS);
+          expect(users.length).toBe(COUNT);
           expect(users.every((u) => u.profile)).toBe(true);
 
           // Force rollback by throwing
