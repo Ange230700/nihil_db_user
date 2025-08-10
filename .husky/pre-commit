@@ -1,4 +1,2 @@
-#!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
 echo "🔧 pre-commit: running lint-staged in $(basename "$(git rev-parse --show-toplevel)")"
 npx lint-staged

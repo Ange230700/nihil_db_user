@@ -1,5 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
 set -e
 echo "🧪 running tests before push…"
 npm run test
