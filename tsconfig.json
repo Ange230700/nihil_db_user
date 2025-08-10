@@ -13,8 +13,6 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
-      "nihildbshared": ["../shared/src"],
-      "nihildbshared/*": ["../shared/src/*"],
       "nihildbuser/*": ["prisma/*"]
     },
     "composite": true
