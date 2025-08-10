@@ -1,55 +1,32 @@
 {
-  "name": "nihildbuser",
+  "name": "db-user",
   "root": "user",
   "projectType": "library",
-  "implicitDependencies": ["nihildbshared"],
+  "implicitDependencies": ["db-shared"],
   "targets": {
     "build": {
       "executor": "nx:run-commands",
-      "options": {
-        "command": "npm run build",
-        "cwd": "user"
-      },
-      "configurations": {
-        "ci": {
-          "command": "npm run build -- --no-cache"
-        }
-      }
+      "options": { "command": "npm run build", "cwd": "user" }
     },
     "test": {
       "executor": "nx:run-commands",
-      "options": {
-        "command": "npm run test",
-        "cwd": "user"
-      }
+      "options": { "command": "npm run test", "cwd": "user" }
     },
     "clean": {
       "executor": "nx:run-commands",
-      "options": {
-        "command": "rm -rf prisma/generated node_modules package-lock.json",
-        "cwd": "user"
-      }
+      "options": { "command": "npm run clean", "cwd": "user" }
     },
     "prisma:db:seed": {
       "executor": "nx:run-commands",
-      "options": {
-        "command": "npm run prisma:db:seed",
-        "cwd": "user"
-      }
+      "options": { "command": "npm run prisma:db:seed", "cwd": "user" }
     },
     "prisma:db:push": {
       "executor": "nx:run-commands",
-      "options": {
-        "command": "npm run prisma:db:push",
-        "cwd": "user"
-      }
+      "options": { "command": "npm run prisma:db:push", "cwd": "user" }
     },
     "prisma:migrate:reset": {
       "executor": "nx:run-commands",
-      "options": {
-        "command": "npm run prisma:migrate:reset",
-        "cwd": "user"
-      }
+      "options": { "command": "npm run prisma:migrate:reset", "cwd": "user" }
     },
     "prisma:migrate:reset:force": {
       "executor": "nx:run-commands",
