@@ -81,8 +81,6 @@
     "coverageDirectory": "./coverage",
     "testEnvironment": "node",
     "moduleNameMapper": {
-      "^nihildbshared$": "nihildbshared",
-      "^nihildbshared/(.*)$": "nihildbshared/$1",
       "^nihildbuser/(.*)$": "<rootDir>/../user/$1"
     }
   },
