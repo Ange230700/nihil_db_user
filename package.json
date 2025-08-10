@@ -91,7 +91,8 @@
   },
   "dependencies": {
     "@prisma/client": "^6.11.1",
-    "argon2": "^0.43.0"
+    "argon2": "^0.43.0",
+    "nihildbshared": "^1.0.2"
   },
   "lint-staged": {
     "*.{ts,js,json}": [

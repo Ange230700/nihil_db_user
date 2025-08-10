@@ -13,9 +13,13 @@
     "allowJs": true,
     "baseUrl": ".",
     "paths": {
+      "nihildbshared": ["../shared/src"],
+      "nihildbshared/*": ["../shared/src/*"],
       "nihildbuser/*": ["prisma/*"]
-    }
+    },
+    "composite": true
   },
   "include": ["prisma"],
-  "exclude": ["node_modules", "dist", "prisma/generated"]
+  "exclude": ["node_modules", "dist", "prisma/generated"],
+  "references": [{ "path": "../shared" }]
 }
