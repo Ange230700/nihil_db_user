@@ -10,7 +10,7 @@ dist-ssr
 .env.prod
 .eslintcache
 coverage
-generated
+prisma/generated
 tsconfig.tsbuildinfo
 
 
