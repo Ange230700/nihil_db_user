@@ -1,5 +1,3 @@
-import { PrismaClient } from "@prisma/client";
-type UserSeedClient = Pick<PrismaClient, "user" | "userprofile">;
-export declare const NUM_USERS = 10;
-declare function seedUsers(prismaClient?: UserSeedClient, skipCleanup?: boolean): Promise<void>;
-export default seedUsers;
+export declare const COUNT: number;
+export declare function seedUsers(skipCleanup?: boolean): Promise<void>;
+export default function seed(skipCleanup?: boolean): Promise<void>;

@@ -32,18 +32,23 @@
     "prisma:format": "prisma format",
     "db:cleanup": "tsx prisma/helpers/cleanUp.ts",
     "prisma:studio": "prisma studio",
-    "publish:package": "npm publish --access public"
+    "publish:package": "npm publish --access public",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@faker-js/faker": "^9.8.0",
     "@types/jest": "^30.0.0",
     "@types/node": "^22.15.29",
     "dotenv-cli": "^9.0.0",
+    "husky": "^9.1.7",
     "jest": "^30.0.2",
+    "lint-staged": "^16.1.0",
     "prisma": "^6.11.1",
     "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
@@ -87,5 +92,16 @@
   "dependencies": {
     "@prisma/client": "^6.11.1",
     "argon2": "^0.43.0"
+  },
+  "lint-staged": {
+    "*.{ts,js,json}": [
+      "prettier --write",
+      "eslint --cache --fix"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

@@ -2,9 +2,8 @@
 import { runSeed } from "nihildbshared";
 import prisma from "nihildbuser/prisma/lib/client";
 import seedUsers from "nihildbuser/prisma/seed";
-const seedWithClient = (skipCleanup) => seedUsers(prisma, skipCleanup);
 async function main() {
-    runSeed(seedWithClient, "User seeding");
+    runSeed(seedUsers, "User seeding");
 }
 main()
     .catch((e) => {
