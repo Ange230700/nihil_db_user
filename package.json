@@ -97,6 +97,9 @@
       "^nihildbuser/(.*)$": "<rootDir>/../user/$1"
     }
   },
+  "prisma": {
+    "seed": "tsx prisma/main.ts"
+  },
   "dependencies": {
     "@prisma/client": "^6.11.1",
     "argon2": "^0.43.0",
